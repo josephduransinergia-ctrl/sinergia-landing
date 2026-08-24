@@ -3,75 +3,44 @@ import { Zap, Building, Droplets } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const CASOS = [
-  {
-    icon: Zap,
-    sector: "Sector energético",
-    title: "Interventoría a contrato de obra — electrificación rural",
-    cliente: "Entidad contratante del sector energético",
-    alcance: "Interventoría técnica, administrativa, financiera, ambiental y social sobre contrato de obra para instalación de soluciones fotovoltaicas en zonas no interconectadas.",
-    status: "En ejecución",
-    metricas: ["7 frentes de interventoría", "Cobertura en zona rural", "Seguimiento documental completo"],
-  },
-  {
-    icon: Building,
-    sector: "Infraestructura pública",
-    title: "Consultoría en gestión contractual — proyecto de infraestructura vial",
-    cliente: "Cliente institucional — sector transporte",
-    alcance: "Acompañamiento en la supervisión contractual de obra de mejoramiento vial, incluyendo revisión de actas, control financiero y verificación de cumplimiento de cronograma.",
-    status: "Finalizado",
-    metricas: ["Liquidación completada", "Expediente auditado", "Sin hallazgos fiscales"],
-  },
-  {
-    icon: Droplets,
-    sector: "Agua y saneamiento",
-    title: "Interventoría a contrato de obra — acueducto rural",
-    cliente: "Cliente institucional — sector agua potable",
-    alcance: "Supervisión integral de obra de construcción de sistema de acueducto en zona rural, con componente ambiental y social reforzado.",
-    status: "Finalizado",
-    metricas: ["5 frentes de interventoría", "Componente social activo", "Entrega a satisfacción"],
-  },
+  { icon: Zap, img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=70", sector: "Sector energético", title: "Electrificación rural — Soluciones fotovoltaicas", cliente: "Entidad contratante del sector energético", status: "En ejecución", tags: ["7 frentes","Zona rural","FAZNI"] },
+  { icon: Building, img: "https://images.unsplash.com/photo-1590644365607-1c5e64809b0c?w=600&q=70", sector: "Infraestructura vial", title: "Mejoramiento vial — Vías terciarias", cliente: "Cliente institucional — sector transporte", status: "Finalizado", tags: ["Liquidado","Sin hallazgos","Expediente auditado"] },
+  { icon: Droplets, img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=70", sector: "Agua y saneamiento", title: "Acueducto rural — Sistema de agua potable", cliente: "Cliente institucional — sector agua", status: "Finalizado", tags: ["5 frentes","Componente social","Entrega OK"] },
 ];
 
 export default function Proyectos() {
   return (
-    <section id="proyectos" className="section" style={{ background: "var(--azul-deep)", color: "var(--hueso)" }}>
+    <section id="proyectos" className="grid-bg" style={{ background: "var(--abyss)", padding: "120px 0" }}>
       <div className="container">
         <FadeIn>
-          <div className="eyebrow eyebrow--light">Proyectos</div>
-          <h2 className="heading" style={{ fontSize: "clamp(1.9rem, 3.5vw, 2.8rem)", color: "var(--hueso)", marginBottom: 14, maxWidth: 600 }}>
-            Contratos supervisados
+          <div className="eyebrow">Proyectos</div>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 3.8vw, 3rem)", color: "var(--hueso)", marginBottom: 14, maxWidth: 600 }}>
+            Contratos <em>supervisados</em>
           </h2>
-          <p style={{ fontSize: 16, color: "rgba(233,224,210,0.7)", lineHeight: 1.7, maxWidth: 560, marginBottom: 48 }}>
-            Historial de interventorías y consultorías ejecutadas bajo estándares de contratación pública colombiana.
-            Los datos específicos de cada contrato se actualizan conforme a los acuerdos de confidencialidad vigentes.
+          <p style={{ fontSize: 16, color: "var(--mist)", lineHeight: 1.7, maxWidth: 560, marginBottom: 52 }}>
+            Historial de interventorías ejecutadas bajo estándares de contratación pública colombiana.
+            Datos actualizados conforme a acuerdos de confidencialidad.
           </p>
         </FadeIn>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 20 }}>
           {CASOS.map((c, i) => (
-            <FadeIn key={c.title} delay={i * 0.08}>
-              <div style={{
-                background: "rgba(233,224,210,0.04)", border: "1px solid var(--line-dark)", borderRadius: 14,
-                padding: "28px 24px", height: "100%", display: "flex", flexDirection: "column",
-                transition: "border-color 200ms ease",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(151,175,149,0.4)"; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--line-dark)"; }}
+            <FadeIn key={c.title} delay={i * 0.1}>
+              <div style={{ background: "var(--abyss-2)", border: "1px solid var(--line)", borderRadius: 18, overflow: "hidden", transition: "transform 300ms var(--ease-out), border-color 300ms ease" }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.borderColor = "rgba(151,175,149,0.3)"; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = "var(--line)"; }}
               >
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, letterSpacing: "0.1em", textTransform: "uppercase", padding: "4px 10px", borderRadius: 999, background: c.status === "En ejecución" ? "rgba(151,175,149,0.2)" : "rgba(233,224,210,0.1)", color: c.status === "En ejecución" ? "var(--verde-soft)" : "rgba(233,224,210,0.6)" }}>
-                    {c.status}
-                  </span>
-                  <c.icon size={18} color="var(--verde-soft)" strokeWidth={1.5} />
+                <div style={{ height: 180, overflow: "hidden", position: "relative" }}>
+                  <img src={c.img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.6) saturate(0.8)" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 40%, var(--abyss-2))" }} />
+                  <span style={{ position: "absolute", top: 14, right: 14, fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", padding: "4px 10px", borderRadius: 999, background: c.status === "En ejecución" ? "rgba(151,175,149,0.25)" : "rgba(233,224,210,0.1)", color: c.status === "En ejecución" ? "var(--verde-glow)" : "var(--mist)" }}>{c.status}</span>
                 </div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, color: "var(--verde-soft)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8 }}>{c.sector}</div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 19, color: "var(--hueso)", marginBottom: 8 }}>{c.title}</h3>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: "var(--verde-soft)", marginBottom: 12 }}>{c.cliente}</div>
-                <p style={{ fontSize: 13.5, color: "rgba(233,224,210,0.65)", lineHeight: 1.65, marginBottom: 18, flex: 1 }}>{c.alcance}</p>
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {c.metricas.map(m => (
-                    <span key={m} style={{ fontFamily: "var(--font-mono)", fontSize: 10, padding: "4px 10px", borderRadius: 6, background: "rgba(233,224,210,0.06)", border: "1px solid var(--line-dark)", color: "rgba(233,224,210,0.55)" }}>{m}</span>
-                  ))}
+                <div style={{ padding: "20px 22px 24px" }}>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, color: "var(--ochre-soft)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>{c.sector}</div>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: "var(--hueso)", marginBottom: 8 }}>{c.title}</h3>
+                  <div style={{ fontSize: 13.5, color: "var(--verde-glow)", fontWeight: 600, marginBottom: 14 }}>{c.cliente}</div>
+                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                    {c.tags.map(t => <span key={t} style={{ fontFamily: "var(--font-mono)", fontSize: 10, padding: "4px 10px", borderRadius: 6, background: "rgba(233,224,210,0.05)", border: "1px solid var(--line)", color: "var(--mist)" }}>{t}</span>)}
+                  </div>
                 </div>
               </div>
             </FadeIn>
