@@ -3,9 +3,9 @@ import { Zap, Building, Droplets } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const CASOS = [
-  { icon: Zap, img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=70", sector: "Sector energético", title: "Electrificación rural — Soluciones fotovoltaicas", cliente: "Entidad contratante del sector energético", status: "En ejecución", tags: ["7 frentes","Zona rural","FAZNI"] },
-  { icon: Building, img: "https://images.unsplash.com/photo-1590644365607-1c5e64809b0c?w=600&q=70", sector: "Infraestructura vial", title: "Mejoramiento vial — Vías terciarias", cliente: "Cliente institucional — sector transporte", status: "Finalizado", tags: ["Liquidado","Sin hallazgos","Expediente auditado"] },
-  { icon: Droplets, img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=70", sector: "Agua y saneamiento", title: "Acueducto rural — Sistema de agua potable", cliente: "Cliente institucional — sector agua", status: "Finalizado", tags: ["5 frentes","Componente social","Entrega OK"] },
+  { icon: Zap, img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600photo-1509391366360-2e959784a276?w=600&q=70q=75photo-1509391366360-2e959784a276?w=600&q=70fit=crop", sector: "Sector energético", title: "Electrificación rural — Soluciones fotovoltaicas", cliente: "Entidad contratante del sector energético", status: "En ejecución", tags: ["7 frentes","Zona rural","FAZNI"] },
+  { icon: Building, img: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600photo-1590644365607-1c5e64809b0c?w=600&q=70q=75photo-1590644365607-1c5e64809b0c?w=600&q=70fit=crop", sector: "Infraestructura vial", title: "Mejoramiento vial — Vías terciarias", cliente: "Cliente institucional — sector transporte", status: "Finalizado", tags: ["Liquidado","Sin hallazgos","Expediente auditado"] },
+  { icon: Droplets, img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600photo-1581092160562-40aa08e78837?w=600&q=70q=75photo-1581092160562-40aa08e78837?w=600&q=70fit=crop", sector: "Agua y saneamiento", title: "Acueducto rural — Sistema de agua potable", cliente: "Cliente institucional — sector agua", status: "Finalizado", tags: ["5 frentes","Componente social","Entrega OK"] },
 ];
 
 export default function Proyectos() {

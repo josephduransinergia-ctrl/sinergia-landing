@@ -58,9 +58,6 @@ export default function Hero() {
       </motion.div>
 
       {/* Imagen decorativa */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.12 }} transition={{ delay: 0.5, duration: 1.2 }} style={{ position: "absolute", right: -80, top: "15%", width: 500, height: 500, borderRadius: "50%", background: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=70') center/cover", filter: "grayscale(0.6)", display: "none" }} data-hero-img />
-
-      <style>{`@media(min-width:1000px){[data-hero-img]{display:block!important}}`}</style>
     </section>
   );
 }

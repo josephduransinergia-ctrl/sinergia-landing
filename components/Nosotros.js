@@ -42,7 +42,7 @@ export default function Nosotros() {
 
         {/* Imagen de obra */}
         <FadeIn delay={0.2} style={{ marginTop: 64, borderRadius: 20, overflow: "hidden", aspectRatio: "21/9", position: "relative" }}>
-          <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1400&q=75" alt="Obra de infraestructura" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.85)" }} />
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400photo-1621905252507-b35492cc74b4?w=1400&q=75q=75photo-1621905252507-b35492cc74b4?w=1400&q=75fit=crop" alt="Obra de infraestructura" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.85)" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 50%, rgba(26,34,48,0.6))" }} />
           <div style={{ position: "absolute", bottom: 24, left: 28, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>Supervisión activa en campo</div>
         </FadeIn>
