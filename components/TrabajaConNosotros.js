@@ -72,7 +72,7 @@ export default function TrabajaConNosotros() {
     try {
       const supabase = createClient();
       let cvP = null, cvN = null;
-      if (cv) { cvN = cv.name; cvP = `cv/${Date.now()}-${cv.name}`; const { error } = await supabase.storage.from("career-applications").upload(cvP, cv); if (error) throw error; }
+     if (cv) { cvN = cv.name; cvP = `cv/${Date.now()}-${cv.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`; const { error } = await supabase.storage.from("career-applications").upload(cvP, cv); if (error) throw error; }
 
       const insertData = {
         vacancy: form.cargo,
